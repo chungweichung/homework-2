@@ -8,23 +8,24 @@
 import SwiftUI
 
 struct Urban: View {
-    let urbanCategory=[Urbancategory(category:"forza750"),Urbancategory(category:"forza350"),Urbancategory(category: "adv350")]
     let category:Urbancategory
     var body: some View {
         VStack{
             Rectangle()
-                .frame(width: 375, height: 375)
-                .cornerRadius(20)
+                .frame(width: 350, height: 350)
+                .cornerRadius(40)
+                .shadow(radius:5)
                 .foregroundColor(Color("back"))
                 .overlay{
                     VStack{
-                        Image(category.category)
+                        Image(category.name)
                             .resizable()
                             .scaledToFit()
-                        Text(category.category)
+                        Text(category.name)
                             .backgroundStyle(Color.gray)
-                            //.position(x:100,y:40)
-                            .font(.title)
+                            .font(.title3)
+                            .fontWeight(.thin)
+                            .foregroundColor(Color("namecolor"))
                     }
                 }
         }

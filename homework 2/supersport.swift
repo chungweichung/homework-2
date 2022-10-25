@@ -8,23 +8,24 @@
 import SwiftUI
 
 struct Supersport: View {
-    let supersportCategory=[Supersportcategory(category:"cbr650r"),Supersportcategory(category:"cbr500r")]
+    //let supersportCategory=[Supersportcategory(category:"cbr650r"),Supersportcategory(category:"cbr500r")]
     let category:Supersportcategory
     var body: some View {
-        VStack{
+        HStack{
             Rectangle()
-                .frame(width: 375, height: 375)
-                .cornerRadius(20)
+                .frame(width: 350, height: 350)
+                .cornerRadius(40)
+                .shadow(radius:5)
                 .foregroundColor(Color("back"))
                 .overlay{
                     VStack{
-                        Image(category.category)
+                        Image(category.name)
                             .resizable()
                             .scaledToFit()
-                        Text(category.category)
-                            .backgroundStyle(Color.gray)
-                            //.position(x:100,y:40)
-                            .font(.title)
+                        Text(category.name)
+                            .font(.title3)
+                            .fontWeight(.thin)
+                            .foregroundColor(Color("namecolor"))
                     }
                 }
         }
